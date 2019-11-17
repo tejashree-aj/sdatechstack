@@ -40,7 +40,17 @@ Be creative! You can also choose to change the background image, the font styles
 One of the first things you'll probably notice is that when you try to make a post, nothing really happens. If you
 open up the developer tools and go to Network and try to make a post. You will see that each time you click, a request
 is actually being sent (to which address?) but it receives a 404 status code which means that the server could not
-find what was requested. So the client-side (or frontend) is actually done here, it is doing what it's supposed to.
+find what was requested. Inspecting the PostsAPI we see that the frontend implementation expects the following HTTP endpoints.
+
+| HTTP Method | HTTP Path | Action |
+| ------------|-----------|--------|
+| `GET` |`/posts` | should return all posts. |
+| `GET` | `/posts/{id}` |should return a specific post based on the provided id.|
+| `POST`| `/posts` | should create a new post.|
+| `PUT` | `/posts` | should update the post.|
+| `DELETE` | `/posts` | should delete the post.|
+
+So the client-side (or frontend) is actually done here, it is doing what it's supposed to.
 It is the server-side (backend) that needs to be fixed.
 
 Your task is to implement the code for the Post resource on the server. This means that in your backend, you need to
