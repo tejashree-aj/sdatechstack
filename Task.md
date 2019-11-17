@@ -1,7 +1,7 @@
-# My SDA Forum
+# My Online Forum
 
 Your task for this part of the module will be to take the Spring + React template 
-application you have received and turn it into an online discussion forum. As you 
+application you have received and turn it into an online discussion forum! As you 
 see, some parts have been done for you. For example, you will not need to worry about how
 to handle the authentication (registration and login) as that has already been fixed.
 
@@ -52,5 +52,23 @@ delete posts on more abstract level.
 the requests.
 
 ### Comment
+It would be nice to be able to comment on posts to offer help and/or feedback to the poster. As we all have learned from social
+forums, allowing people to express their thoughts and opinions _always_ leads to [well-formed discussions and intellectual
+development](https://beckyyk.files.wordpress.com/2010/09/screen-shot-2010-09-28-at-7-13-39-am.png).
 
- 
+Your second task is to add the functionality to make comments on posts. This time around, the backend code has been fixed
+(`Comment.java`, `CommentRepository.java`, `CommentService.java`, `CommentController.java`)
+but the frontend code is missing. So what you need to do now is go into the react project (`frontent`) and add
+comment components that will display some kind of input for comments on a post with the buttons for
+making a comment and deleting a comment. That means you need to make sure that a request is sent when you click
+the button to post a comment and when you click the button to delete a comment.
+
+- Create comment components in a folder `src/components/comments` which will display some kind of input for comments
+on a post. This could look like the post input but smaller which is then displayed on a post. Look at how
+the components in `src/components/posts` are structured and take inspiration from there to create your
+comment components.
+- Create a `CommentsAPI.js` which will handle making requests to the right endpoint(url) for comments
+- Finally, make sure that the CommentForm component receives the proper callback function so that
+requests can be made when the buttons are clicked.
+
+under construction...
