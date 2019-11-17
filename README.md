@@ -40,10 +40,41 @@ To install the project dependencies for the frontend, open the terminal and make
 To start the frontend server run `npm start` from the `frontend` directory. Make sure that database and backend server are also running so that the frontend can interact with the backend.
 When working on the frontend, open the `frontend` folder in your favorite Javascript IDE.  
 
+### Linking to your own repository
+The following should be done by one person in the group.
+
+When you clone a repo, the origin repository automatically gets set to where you cloned it from. In this case, the origin will be
+```
+origin	git@github.com:software-dev-academy/web-application-template.git`
+```
+You can confirm this by running `git remote -v` in the web application folder. Since this is not a repository you
+own and you're not a collaborator in the repository you will not be able to push anything. So you need to create a
+new empty repository (which you own) and use that one as the origin repository instead. 
+
+Go ahead and create a new empty repository and set it as origin by running the following commands in the web application
+folder:
+```
+git remote set-url origin git@github.com:<Your GitHub Username>/<Your repo name>.git
+git push
+```
+Example: If your username is `sdauser` and your repo name is `web-application` the commands would be:
+
+```
+git remote set-url origin git@github.com:sdauser/web-application.git
+git push
+```
+If everything goes well you should now see the files pushed to the repo.
+
+### Inviting collaborators
+The following should be done by the person who created the repo in the previous step.
+
+Now that you've created a repo, you can start inviting your group members as collaborators so that they can work
+with you on your repo. Go to your repo -> go to the `Settings` tab -> go to the `Collaborators` tab and then add your
+group members via their GitHub username. Now they will be able to push changes as well after they clone your repo.
 
 ## FAQ
 ### How can I connect to running database from terminal?
-Sometimes you might want to inspect the tables, run raw quesies, seed the database, check that a certain backend action has been performed correctly. To do that you can simply run the following command
+Sometimes you might want to inspect the tables, run raw queries, seed the database, check that a certain backend action has been performed correctly. To do that you can simply run the following command
 
 `docker run -it --network host postgres:11-alpine psql -h localhost -U skeleton_user -p 5433 -W skeleton`
 
