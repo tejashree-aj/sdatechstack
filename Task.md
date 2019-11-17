@@ -40,7 +40,7 @@ Be creative! You can also choose to change the background image, the font styles
 One of the first things you'll probably notice is that when you try to make a post, nothing really happens. If you
 open up the developer tools and go to Network and try to make a post. You will see that each time you click, a request
 is actually being sent (to which address?) but it receives a 404 status code which means that the server could not
-find what was requested. Inspecting the PostsAPI we see that the frontend implementation expects the following HTTP endpoints.
+find what was requested. Inspecting the `PostsAPI` we see that the frontend implementation expects the following HTTP endpoints.
 
 | HTTP Method | HTTP Path | Action |
 | ------------|-----------|--------|
