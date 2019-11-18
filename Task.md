@@ -85,7 +85,26 @@ development](https://beckyyk.files.wordpress.com/2010/09/screen-shot-2010-09-28-
 
 Your second task is to add the functionality to make comments on posts and delete comments. This time around, the backend code has been fixed
 (`Comment.java`, `CommentRepository.java`, `CommentService.java`, `CommentController.java`)
-but the frontend code is missing. So what you need to do now is go into the react project (`frontend`) and add
+but the frontend code is missing. Although you will need to uncomment the aforementioned files and uncomment these two
+ sections in `Post.java`:
+ ```java
+//    public void addComment(Comment comment) {
+//        comments.add( comment );
+//        comment.setPost( this );
+//    }
+//
+//    public void removeComment(Comment comment) {
+//        comments.remove( comment );
+//        comment.setPost( null );
+//    }
+```
+
+and
+```java
+//    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+//    private List<Comment> comments = new ArrayList<>();
+```
+After that's done you should now go into the react project (`frontend`) and add
 comment components that will display some kind of input for comments on a post with the buttons for
 making a comment and deleting a comment. That means you need to make sure that a request is sent when you click
 the button to post a comment and when you click the button to delete a comment.
