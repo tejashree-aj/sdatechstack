@@ -1,6 +1,7 @@
 package se.kth.sda6.skeleton.auth;
 
-public class AuthRequest {
+public class
+AuthRequest {
     private String email;
     private String password;
 
